@@ -1,4 +1,4 @@
-FROM jboss/wildfly:8.2.1.Final AS final
+FROM jboss/wildfly:8.2.1.Final
 
 # Enable the agent by setting environment variables
 ENV OTEL_EXPORTER_OTLP_ENDPOINT=https://otlp.nr-data.net:4318 \
