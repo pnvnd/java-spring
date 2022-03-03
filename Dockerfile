@@ -2,6 +2,7 @@ FROM jboss/wildfly:8.2.1.Final AS final
 
 # Enable the agent by setting environment variables
 ENV OTEL_EXPORTER_OTLP_ENDPOINT=https://otlp.nr-data.net:4318 \
+# OTEL_EXPORTER_OTLP_HEADERS=api-key=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXNRAL
 OTEL_METRIC_EXPORT_INTERVAL=1000 \
 OTEL_EXPORTER_OTLP_PROTOCOL=http/protobuf \
 OTEL_RESOURCE_ATTRIBUTES=service.name=java-spring.otel,service.instance.id=docker
