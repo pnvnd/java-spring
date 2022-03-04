@@ -148,7 +148,7 @@ This tutorial goes through the steps to create a Java Spring Boot application wi
 ## New Relic Instrumentation
 1. If you also need to instrument the application with New Relic, simply download and extract the Java Agent to the root of this project: https://download.newrelic.com/newrelic/java-agent/newrelic-agent/current/newrelic-java.zip
 
-2. Edit the `newrelic.yml` file to change the `license_key` and `app_name`.
+2. Edit the `newrelic.yml` file to change the `license_key` and `app_name`.  Alternatively, add environment variables for `NEW_RELIC_LICENSE_KEY` and `NEW_RELIC_APP_NAME`.
 
 3. To run the app from your terminal, make sure your environment variables are set, then run:
     ```
