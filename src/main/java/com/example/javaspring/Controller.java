@@ -1,21 +1,21 @@
-package com.example.demo;
+package com.example.javaspring;
 
-import io.opentelemetry.api.GlobalOpenTelemetry;
-import io.opentelemetry.api.common.Attributes;
-import io.opentelemetry.api.metrics.LongHistogram;
-import io.opentelemetry.api.metrics.Meter;
-import io.opentelemetry.api.trace.Tracer;
+// import io.opentelemetry.api.GlobalOpenTelemetry;
+// import io.opentelemetry.api.common.Attributes;
+// import io.opentelemetry.api.metrics.LongHistogram;
+// import io.opentelemetry.api.metrics.Meter;
+// import io.opentelemetry.api.trace.Tracer;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import java.util.Random;
+// import java.util.Random;
 
 @RestController
 public class Controller {
 
-  private static final Tracer TRACER = GlobalOpenTelemetry.getTracer(Controller.class.getName());
-  private static final Meter METER = GlobalOpenTelemetry.getMeter(Controller.class.getName());
-  private static final LongHistogram histogram = METER.histogramBuilder("my-histogram").ofLongs().build();
-  private static final Random RANDOM = new Random();
+  // private static final Tracer TRACER = GlobalOpenTelemetry.getTracer(Controller.class.getName());
+  // private static final Meter METER = GlobalOpenTelemetry.getMeter(Controller.class.getName());
+  // private static final LongHistogram histogram = METER.histogramBuilder("my-histogram").ofLongs().build();
+  // private static final Random RANDOM = new Random();
 
   // Step 1: Add a controller method that we can invoke to exercise the application
   @GetMapping("/ping")

@@ -1,19 +1,18 @@
-package com.example.demo;
+package com.example.javaspring;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.instrumentation.runtimemetrics.GarbageCollector;
 import io.opentelemetry.instrumentation.runtimemetrics.MemoryPools;
 import io.opentelemetry.instrumentation.spring.webmvc.SpringWebMvcTracing;
 import io.opentelemetry.sdk.autoconfigure.AutoConfiguredOpenTelemetrySdk;
-
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
 import org.springframework.context.annotation.Bean;
 import javax.servlet.Filter;
 
 @SpringBootApplication
-public class DemoApplication {
+public class JavaSpringApplication {
 
 	public static void main(String[] args) {
 		// Step 3: Initialize OpenTelemetry using autoconfigure
@@ -25,7 +24,7 @@ public class DemoApplication {
 		MemoryPools.registerObservers();
 		GarbageCollector.registerObservers();
 		
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(JavaSpringApplication.class, args);
 	}
 
 	// Step 5: Register Spring WebMVC instrumentation
