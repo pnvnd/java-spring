@@ -172,3 +172,16 @@ This tutorial goes through the steps to create a Java Spring Boot application wi
 8. Both OpenTelemetry and New Relic agent is running, check out the data from both in New Relic to see the differences.
 
     ![New Relic and OpenTelemetry in Docker](nr-otel_java-spring_docker.png)
+
+# Troubleshooting
+
+1. Spin up an instance Jaeger on Docker
+    ```
+    docker run --name jaeger -p 13133:13133 -p 16686:16686 -p 4318:55681 -d --restart=unless-stopped jaegertracing/opentelemetry-all-in-one
+    ```
+
+2. Change your local environment variable for `OTEL_EXPORTER_OTLP_ENDPOINT` to `http://localhost:4318` and run your app locally. 
+
+3. Generate some traffic by going to http://localhost:8080
+
+4. Go to http://127.0.0.1:16686 to view the Jaeger UI.  Check to see if OpenTelemetry traces are there.
